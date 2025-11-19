@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oro nero Bar cafetería - Granada</title>
-
+    <title>Oro Nero Caffè | Auténtica Italia en Granada</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        /* --- Configuración Global --- */
         :root {
-            --color-primario: #c5a880; /* Un tono dorado/café elegante */
-            --color-fondo: #ffffff;
-            --color-fondo-secundario: #f9f9f9;
-            --color-texto: #333;
-            --color-texto-claro: #ffffff;
+            --color-bg: #121212; /* Negro suave */
+            --color-card: #1e1e1e;
+            --color-accent: #d4af37; /* Dorado elegante */
+            --color-text: #f0f0f0;
+            --color-text-muted: #a0a0a0;
+            --font-title: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
         }
 
         * {
@@ -25,482 +28,534 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
         body {
-            font-family: 'Lato', sans-serif;
-            color: var(--color-texto);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-body);
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        /* --- Tipografía y Utilidades --- */
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            color: var(--color-primario);
+        .highlight {
+            color: var(--color-accent);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        /* --- Header (Navegación) --- */
-        .header {
-            background: var(--color-fondo);
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: var(--color-primario);
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--color-texto);
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--color-primario);
-        }
-
-        /* --- Sección Hero (Inicio) --- */
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 90vh;
-            text-align: center;
-            color: var(--color-texto-claro);
-            padding: 0;
-            /* IMAGEN DE FONDO: Cambia esta URL por una foto tuya */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1511920183303-623d4c94705a') no-repeat center center/cover;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
+            padding: 0 20px;
         }
 
         .btn {
             display: inline-block;
-            background: var(--color-primario);
-            color: var(--color-texto-claro);
-            padding: 0.8rem 1.8rem;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--color-accent);
+            color: var(--color-accent);
             text-decoration: none;
-            font-weight: 700;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            letter-spacing: 1px;
         }
 
         .btn:hover {
-            background: #b39269;
+            background: var(--color-accent);
+            color: var(--color-bg);
         }
 
-        /* --- Sección Sobre Nosotros --- */
-        #sobre {
-            background: var(--color-fondo-secundario);
+        /* --- Header --- */
+        header {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        
-        .sobre-contenido {
-            max-width: 800px;
-            margin: 0 auto;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: var(--font-title);
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            font-size: 1.1rem;
         }
 
-        /* --- Sección Menú --- */
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #ddd;
+        }
+
+        /* --- Oferta Especial (Menu del dia) --- */
+        .promo-banner {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        /* --- Sección Carta --- */
+        .menu-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--color-text-muted);
+        }
+
+        /* Grid del Menú */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
-        .menu-columna {
-            border: 1px solid #eee;
-            padding: 2rem;
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        .menu-category {
+            background: var(--color-card);
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 4px;
         }
-        
-        .menu-columna h3 {
-            font-size: 1.8rem;
-            color: var(--color-texto);
-            border-bottom: 2px solid var(--color-primario);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
+
+        .category-title {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
         }
 
         .menu-item {
-            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 10px;
         }
 
-        .menu-item h4 {
-            font-size: 1.2rem;
-            color: var(--color-texto);
-            margin-bottom: 0.25rem;
-            font-family: 'Lato', sans-serif; /* Hacemos los platos más legibles */
-            font-weight: 700;
+        .menu-item:last-child {
+            border-bottom: none;
         }
 
-        .menu-item p {
-            font-size: 0.95rem;
-            color: #555;
+        .item-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .item-info p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
             font-style: italic;
         }
 
-        /* --- Sección Galería --- */
-        #galeria {
-            background: var(--color-fondo-secundario);
+        .item-price {
+            font-weight: 600;
+            color: var(--color-accent);
+            white-space: nowrap;
+            margin-left: 15px;
         }
 
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .galeria-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* --- Galeria Visual --- */
+        .visual-break {
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Foto de pasta */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .galeria-item img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        
-        .galeria-aviso {
+        .visual-content {
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            border: 1px solid var(--color-accent);
             text-align: center;
-            margin-top: 2rem;
-            font-style: italic;
-            color: #777;
-        }
-
-        /* --- Sección Contacto y Ubicación --- */
-        .contacto-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: flex-start;
-        }
-
-        .contacto-info h3, .horarios h3 {
-            font-size: 1.8rem;
-            color: var(--color-texto);
-            border-bottom: 2px solid var(--color-primario);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contacto-info ul, .horarios ul {
-            list-style: none;
-            font-size: 1.1rem;
-            line-height: 2;
-        }
-        
-        .contacto-info ul li strong {
-            color: var(--color-texto);
-            margin-right: 0.5rem;
-        }
-        
-        .contacto-info ul li a {
-            color: var(--color-primario);
-            text-decoration: none;
-        }
-        
-        .contacto-info ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .mapa-container iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* --- Footer --- */
-        .footer {
-            background: var(--color-texto);
-            color: var(--color-texto-claro);
+        footer {
+            background: #000;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .contact-list li {
+            list-style: none;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-text-muted);
+        }
+
+        .social-icons a {
+            color: var(--color-text);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--color-accent);
+        }
+
+        .copyright {
             text-align: center;
-            padding: 2.5rem 1rem;
-        }
-        
-        .footer p {
-            margin: 0;
-            opacity: 0.8;
+            color: #555;
+            font-size: 0.8rem;
+            margin-top: 40px;
         }
 
-        /* --- Responsive (Móvil) --- */
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            h2 {
-                font-size: 2rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                height: auto;
-                padding: 1rem 0;
-            }
-
-            .nav-menu {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-                margin-top: 1rem;
-            }
-
-            .hero {
-                height: 70vh;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            section {
-                padding: 3rem 0;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-
-            .contacto-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mapa-container {
-                /* Invertimos el orden en móvil para mostrar info primero */
-                order: -1;
-            }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplificado para el ejemplo */
+            .menu-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <nav class="navbar container">
-            <a href="#inicio" class="nav-logo">Oro nero</a>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#menu" class="nav-link">Menú</a></li>
-                <li><a href="#galeria" class="nav-link">Galería</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    <div class="promo-banner">
+        MENU DEL DÍA (Lunes a Viernes): Pasta del día + Bebida + Tapa + Café = 12,50€
+    </div>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">ORO <span>NERO</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#desayunos">Desayunos</a></li>
+                <li><a href="#pasta">Pasta & Risotto</a></li>
+                <li><a href="#dulces">Dolci</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <h1>Oro nero</h1>
-            <p>Sabor italiano y español en el corazón de Granada</p>
-            <a href="#menu" class="btn">Ver Nuestro Menú</a>
-        </section>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Sabor Italiano <br> en el corazón de <span class="highlight">Granada</span></h1>
+            <p>Pasta fresca, café de especialidad y dulces caseros según la tradición.</p>
+            <a href="#pasta" class="btn">VER LA CARTA</a>
+        </div>
+    </section>
 
-        <section id="sobre">
-            <div class="container">
-                <h2>Bienvenidos</h2>
-                <div class="sobre-contenido">
-                    <p>
-                        Bienvenidos a Oro nero Bar cafetería, un rincón acogedor en la preciosa ciudad de Granada. 
-                        Te recibimos con hospitalidad y una espléndida variedad de cocina italiana y española. 
-                        Disfruta de la mejor cocina casera y tradicional, perfecta para desayunos, brunch, almuerzos o cenas. 
-                        ¡Te esperamos en nuestra terraza!
-                    </p>
+    <section id="desayunos" class="menu-section container">
+        <div class="section-title">
+            <h2>Colazione Italiana</h2>
+            <p>Empieza el día con nuestras tostadas especiales y bollería artesanal</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3 class="category-title">Tostadas Italianas</h3>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Provolone y Tomate</h4>
+                        <p>Pan artesano con queso provolone fundido</p>
+                    </div>
+                    <div class="item-price">2,90 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Speck, Gorgonzola y Tomate</h4>
+                        <p>Auténtico jamón ahumado italiano</p>
+                    </div>
+                    <div class="item-price">3,50 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Mortadela y Mantequilla</h4>
+                        <p>Clásica de Bolonia</p>
+                    </div>
+                    <div class="item-price">2,60 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Panceta Arrotolata y Tomate</h4>
+                        <p>Sabor intenso y tradicional</p>
+                    </div>
+                    <div class="item-price">2,60 €</div>
                 </div>
             </div>
-        </section>
 
-        <section id="menu">
-            <div class="container">
-                <h2>Nuestro Menú</h2>
-                <div class="menu-grid">
-                    
-                    <div class="menu-columna">
-                        <h3>Desayunos y Brunch</h3>
-                        
-                        <div class="menu-item">
-                            <h4>Tostada Clásica Española</h4>
-                            <p>Pan de pueblo con tomate triturado y aceite de oliva virgen extra.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4>Croissant al Burro</h4>
-                            <p>Auténtico croissant italiano de mantequilla, simple o relleno.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4>Brunch Oro nero</h4>
-                            <p>Huevos, bacon, tostada, zumo de naranja natural y café.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4>Yogur con Fruta y Muesli</h4>
-                            <p>Yogur griego, frutas de temporada y muesli crujiente.</p>
-                        </div>
+            <div class="menu-category">
+                <h3 class="category-title">Dulces & Bollería</h3>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Croissant al Burro</h4>
+                        <p>Mantequilla, vacío o relleno de crema/nutella</p>
                     </div>
-
-                    <div class="menu-columna">
-                        <h3>Almuerzos y Café</h3>
-                        
-                        <div class="menu-item">
-                            <h4>Piadina Romagnola</h4>
-                            <p>Rellena de prosciutto, rúcula y queso squacquerone.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4>Ensalada Caprese</h4>
-                            <p>Tomate fresco, mozzarella de búfala y albahaca.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4>Espresso Italiano</h4>
-                            <p>El auténtico "oro nero", intenso y aromático.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4>Cappuccino</h4>
-                            <p>Espresso, leche y una crema de leche perfecta.</p>
-                        </div>
+                    <div class="item-price">1,80 - 2,10 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Cannolo Siciliano</h4>
+                        <p>Relleno de ricotta dulce y pistacho</p>
                     </div>
-
+                    <div class="item-price">3,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Strudel de Manzana</h4>
+                        <p>Casero, receta tradicional</p>
+                    </div>
+                    <div class="item-price">4,50 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Tiramisú</h4>
+                        <p>El clásico postre italiano</p>
+                    </div>
+                    <div class="item-price">5,00 €</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="galeria">
-            <div class="container">
-                <h2>Galería</h2>
-                <div class="galeria-grid">
-                    <div class="galeria-item">
-                        <img src="https://images.unsplash.com/photo-1559925336-6e53dc03b13f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Foto de un postre">
+    <div class="visual-break">
+        <div class="visual-content">
+            <h3>Pasta Fresca Hecha en Casa</h3>
+            <p class="highlight">Sabores auténticos de la Nonna</p>
+        </div>
+    </div>
+
+    <section id="pasta" class="menu-section container">
+        <div class="section-title">
+            <h2>La Nostra Cucina</h2>
+            <p>Platos principales, pastas frescas y carnes</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3 class="category-title">Pasta Fresca</h3>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Tagliatelle Bolognese</h4>
+                        <p>Salsa de carne tradicional cocinada a fuego lento</p>
                     </div>
-                    <div class="galeria-item">
-                        <img src="https://images.unsplash.com/photo-1541544330256-5b65a610c14b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Foto del interior de la cafetería">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="https://images.unsplash.com/photo-1504754524776-8f4f377907b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Foto de un desayuno">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Foto de comida italiana">
-                    </div>
+                    <div class="item-price">12,50 €</div>
                 </div>
-                <p class="galeria-aviso">(Las imágenes actuales son de muestra. ¡Reemplázalas por las tuyas!)</p>
-            </div>
-        </section>
-
-        <section id="contacto">
-            <div class="container">
-                <h2>Contacto y Ubicación</h2>
-                <div class="contacto-grid">
-                    
-                    <div class="contacto-columna">
-                        
-                        <div class="horarios">
-                            <h3>Horario</h3>
-                            <ul>
-                                <li><strong>Lunes a Viernes:</strong> 08:00 - 21:00</li>
-                                <li><strong>Sábados:</strong> 09:00 - 21:00</li>
-                                <li><strong>Domingos:</strong> 09:00 - 14:00</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="contacto-info">
-                            <h3>Información</h3>
-                            <ul>
-                                <li>
-                                    <strong>Dirección:</strong> 
-                                    c/ Obispo Hurtado 21, 18002 Granada, España
-                                </li>
-                                <li>
-                                    <strong>Teléfono:</strong> 
-                                    <a href="tel:+34644736471">+34 644 73 64 71</a>
-                                </li>
-                                <li>
-                                    <strong>Email:</strong> 
-                                    <a href="mailto:oronero.adm@gmail.com">oronero.adm@gmail.com</a>
-                                </li>
-                                <li>
-                                    <strong>Servicios:</strong> 
-                                    Terraza, Climatización, Eventos Privados.
-                                </li>
-                            </ul>
-                        </div>
-
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>La auténtica: Huevo, Pecorino, Guanciale y Pimienta (sin nata)</p>
                     </div>
-
-                    <div class="mapa-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.16782522068!2d-3.6068213233150247!3d37.17300797209774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fcb0b6059c15%3A0xc0c8d1d8c1e48e8!2sC.%20Obispo%20Hurtado%2C%2021%2C%2018002%20Granada!5e0!3m2!1ses!2ses!4v1729881182270!5m2!1ses!2ses" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="item-price">13,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Bigoli Cacio e Pepe</h4>
+                        <p>Espaguetis frescos gruesos con queso y pimienta</p>
                     </div>
-
+                    <div class="item-price">12,50 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Gnocchi 4 Quesos</h4>
+                        <p>O al Pesto Genovés</p>
+                    </div>
+                    <div class="item-price">11,50 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Lasagna</h4>
+                        <p>De carne clásica</p>
+                    </div>
+                    <div class="item-price">14,00 €</div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <p>&copy; 2024 Oro nero Bar cafetería - Marco Ruggeri. Todos los derechos reservados.</p>
-        <p>Sitio web diseñado por Gemini</p>
+            <div class="menu-category">
+                <h3 class="category-title">Ravioli & Rellenos</h3>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Ravioli Ricotta e Spinaci</h4>
+                        <p>Con salsa de mantequilla y parmesano</p>
+                    </div>
+                    <div class="item-price">13,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Tortelloni Oro Nero</h4>
+                        <p>Pasta negra de salmón y queso ricotta</p>
+                    </div>
+                    <div class="item-price">14,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Ravioli de Calabaza</h4>
+                        <p>Con mantequilla y salvia</p>
+                    </div>
+                    <div class="item-price">14,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Caramelos de Queso y Pera</h4>
+                        <p>Una combinación dulce y salada exquisita</p>
+                    </div>
+                    <div class="item-price">14,00 €</div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title">Entrantes & Carnes</h3>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Ensalada Caprese</h4>
+                        <p>Tomate, Mozzarella y Albahaca fresca</p>
+                    </div>
+                    <div class="item-price">10,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Huevos Rotos con Jamón</h4>
+                        <p>Estilo clásico español</p>
+                    </div>
+                    <div class="item-price">10,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Solomillo de Cerdo</h4>
+                        <p>A la plancha o a la pimienta verde</p>
+                    </div>
+                    <div class="item-price">16,00 €</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Entrecot</h4>
+                        <p>Con guarnición de patatas fritas</p>
+                    </div>
+                    <div class="item-price">19,50 €</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ORO NERO CAFFÈ</h3>
+                    <p>Un rincón de Italia donde la tradición se encuentra con la calidad. Disfruta de nuestros desayunos, almuerzos y repostería casera.</p>
+                    <br>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>CONTACTO</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> C/ Obispo Hurtado 21, Granada</li>
+                        <li><i class="fas fa-phone"></i> +34 644 73 64 71</li>
+                        <li><i class="fas fa-envelope"></i> oronero.adm@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>HORARIO</h3>
+                    <ul class="contact-list">
+                        <li><span>Lunes - Viernes:</span> 08:00 - 21:00</li>
+                        <li><span>Sábados:</span> 09:00 - 21:00</li>
+                        <li><span>Domingos:</span> Cerrado</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.097367865686!2d-3.6066386!3d37.1744964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fce8f3e4e1d1%3A0x12345abcde!2sC.%20Obispo%20Hurtado%2C%2021%2C%2018002%20Granada!5e0!3m2!1ses!2ses!4v1635789123456!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2024 Oro Nero Caffè. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
 </body>
