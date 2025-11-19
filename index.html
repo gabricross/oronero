@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"> <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oro Nero Caffè | Authentic Italian in Granada</title>
+    <title>Oro Nero Caffè | Granada</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,7 @@
 
     <style>
         :root {
-            --bg-color: #0f0f0f;
+            --bg-color: #111;
             --card-bg: #1a1a1a;
             --gold: #c5a059;
             --text-light: #f4f4f4;
@@ -28,36 +29,54 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, .price { font-family: 'Cinzel', serif; }
+        h1, h2, h3, .price, .logo { font-family: 'Cinzel', serif; }
 
-        /* --- Utility Classes --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .text-gold { color: var(--gold); }
-        .text-center { text-align: center; }
-        .section-padding { padding: 80px 0; }
+        /* --- Language Bar --- */
+        .lang-bar {
+            background: #000;
+            text-align: right;
+            padding: 10px 20px;
+            border-bottom: 1px solid #333;
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid #444;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 4px;
+            transition: 0.3s;
+            opacity: 0.6;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            opacity: 1;
+            border-color: var(--gold);
+            background: #222;
+        }
 
         /* --- Header --- */
         header {
-            background: rgba(15, 15, 15, 0.95);
-            padding: 15px 0;
+            background: rgba(17, 17, 17, 0.95);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--gold);
+            text-align: center;
         }
-        .nav-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .logo { 
+            font-size: 2rem; 
+            color: #fff; 
+            text-decoration: none; 
+            letter-spacing: 3px; 
+            text-transform: uppercase;
         }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; letter-spacing: 2px; }
-        .nav-menu { list-style: none; display: flex; gap: 20px; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
-        .nav-menu a:hover { color: var(--gold); }
+        .logo span { color: var(--gold); }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
-            height: 80vh;
+            height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -65,323 +84,44 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 0 20px;
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; color: #ddd; margin-bottom: 2rem; }
-        .btn-gold {
-            padding: 12px 30px;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-gold:hover { background: var(--gold); color: #000; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: var(--gold); }
+        .hero p { font-size: 1.2rem; color: #ddd; font-style: italic; }
 
-        /* --- Daily Menu Banner --- */
-        .daily-menu {
-            background: var(--gold);
-            color: #000;
+        /* --- Menu Styles --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 60px 0; }
+        
+        .category-title {
             text-align: center;
-            padding: 15px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        /* --- Menu Grid System --- */
-        .menu-category-title {
             font-size: 2rem;
+            color: var(--gold);
             margin-bottom: 40px;
-            text-align: center;
-            border-bottom: 1px solid var(--gold);
-            display: inline-block;
+            border-bottom: 1px solid #333;
             padding-bottom: 10px;
+            display: inline-block;
         }
-
+        
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
         }
 
         .menu-card {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 25px;
             border: 1px solid #333;
-            border-radius: 4px;
+            border-radius: 6px;
         }
+
+        .menu-card h3 { color: #fff; margin-bottom: 20px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
 
         .menu-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 18px;
-            border-bottom: 1px dashed #333;
-            padding-bottom: 5px;
-        }
-        .menu-item:last-child { border-bottom: none; }
-        
-        .item-desc h4 { font-size: 1.1rem; margin-bottom: 4px; color: #fff; }
-        .item-desc p { font-size: 0.85rem; color: var(--text-dim); font-style: italic; }
-        .item-price { font-weight: bold; color: var(--gold); white-space: nowrap; margin-left: 15px; }
-
-        /* --- Compact List for Coffee/Drinks --- */
-        .compact-list .menu-item { margin-bottom: 10px; padding-bottom: 5px; }
-        .compact-list h4 { font-size: 0.95rem; font-family: 'Lato', sans-serif; }
-
-        /* --- Footer --- */
-        footer { background: #000; padding: 40px 0; text-align: center; border-top: 1px solid #333; }
-        .socials a { color: #fff; font-size: 1.5rem; margin: 0 10px; }
-
-        /* Mobile */
-        @media(max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-menu { display: none; } /* Oculto en móvil simple */
-            .menu-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="daily-menu">
-        MENU OF THE DAY (Mon-Fri): Pasta + Drink + Tapa + Coffee/Tea = 12,50 €
-    </div>
-
-    <header>
-        <div class="container nav-flex">
-            <a href="#" class="logo">ORO NERO <span class="text-gold">CAFFÈ</span></a>
-            <ul class="nav-menu">
-                <li><a href="#breakfast">Breakfast</a></li>
-                <li><a href="#pasta">Pasta</a></li>
-                <li><a href="#meat">Meat</a></li>
-                <li><a href="#coffee">Coffee</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Authentic Italian Taste <br> in <span class="text-gold">Granada</span></h1>
-            <p>Homemade Pasta • Speciality Coffee • Traditional Sweets</p>
-            <a href="#pasta" class="btn-gold">View Menu</a>
-        </div>
-    </section>
-
-    <section id="breakfast" class="section-padding container">
-        <div class="text-center">
-            <h2 class="menu-category-title">Breakfast & Brunch</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <h3 class="text-gold mb-3">Eggs</h3>
-                <br>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>French Omelette</h4></div>
-                    <div class="item-price">3,50 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Ham & Cheese Omelette</h4></div>
-                    <div class="item-price">4,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Scrambled Eggs</h4></div>
-                    <div class="item-price">3,50 €</div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <h3 class="text-gold mb-3">Italian Speciality Toasts</h3>
-                <br>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Turkey, Cheese & Tomato</h4></div>
-                    <div class="item-price">2,90 / 5,70 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Provolone & Tomato</h4><p>Melted Italian cheese</p></div>
-                    <div class="item-price">2,70 / 5,30 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Speck & Tomato</h4><p>Smoked cured ham</p></div>
-                    <div class="item-price">2,60 / 5,10 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Mortadella & Butter</h4><p>Classic Bologna style</p></div>
-                    <div class="item-price">2,60 / 5,10 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Pancetta & Tomato</h4><p>Italian rolled bacon</p></div>
-                    <div class="item-price">2,60 / 5,10 €</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pasta" class="section-padding container">
-        <div class="text-center">
-            <h2 class="menu-category-title">Pasta & Starters</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <h3 class="text-gold">Starters</h3>
-                <br>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Caprese Salad</h4><p>Tomato & Mozzarella</p></div>
-                    <div class="item-price">9,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Oro Nero Salad</h4></div>
-                    <div class="item-price">13,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Huevos Rotos con Jamón</h4><p>Fried eggs with potatoes & ham</p></div>
-                    <div class="item-price">10,00 €</div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <h3 class="text-gold">Fresh Pasta</h3>
-                <br>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Tagliatelle Bolognese</h4></div>
-                    <div class="item-price">12,50 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Spaghetti Carbonara</h4><p>Authentic: Egg, Pecorino, Guanciale</p></div>
-                    <div class="item-price">12,50 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Bigoli Cacio e Pepe</h4><p>Cheese & Black Pepper</p></div>
-                    <div class="item-price">13,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Gnocchi 4 Cheeses / Pesto</h4></div>
-                    <div class="item-price">12,50 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Lasagna</h4></div>
-                    <div class="item-price">13,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Ravioli Ricotta & Spinach</h4></div>
-                    <div class="item-price">13,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Tortelloni Oro Nero</h4><p>Black pasta with salmon & ricotta</p></div>
-                    <div class="item-price">14,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Pear & Cheese "Caramels"</h4><p>With Gorgonzola & Walnut sauce</p></div>
-                    <div class="item-price">14,00 €</div>
-                </div>
-                 <div class="menu-item">
-                    <div class="item-desc"><h4>Pumpkin Ravioli</h4><p>With butter & sage</p></div>
-                    <div class="item-price">13,00 €</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="meat" class="section-padding container">
-        <div class="menu-grid">
-            <div class="menu-card">
-                <h3 class="text-gold">Meats</h3>
-                <br>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Grilled Pork Tenderloin</h4></div>
-                    <div class="item-price">16,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Pork Tenderloin Green Pepper</h4></div>
-                    <div class="item-price">17,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Entrecot</h4><p>With fries & confit tomato</p></div>
-                    <div class="item-price">19,50 €</div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <h3 class="text-gold">Dolci (Desserts)</h3>
-                <br>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Tiramisú</h4></div>
-                    <div class="item-price">5,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Cannolo Siciliano</h4></div>
-                    <div class="item-price">3,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Homemade Strudel</h4></div>
-                    <div class="item-price">4,50 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Cheesecake</h4></div>
-                    <div class="item-price">5,00 €</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-desc"><h4>Croissant with Cream</h4></div>
-                    <div class="item-price">2,80 €</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="coffee" class="section-padding container">
-        <div class="text-center">
-            <h2 class="menu-category-title">Cafeteria & Bar</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-card compact-list">
-                <h3 class="text-gold">Coffee & Tea</h3>
-                <br>
-                <div class="menu-item"><div class="item-desc"><h4>Espresso</h4></div><div class="item-price">1,50 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Macchiato (Cortado)</h4></div><div class="item-price">1,50 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Coffee with Milk</h4></div><div class="item-price">1,60 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Cappuccino</h4></div><div class="item-price">2,00 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Double Espresso</h4></div><div class="item-price">2,00 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Bonbon Coffee</h4></div><div class="item-price">1,70 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Tea / Infusions</h4></div><div class="item-price">1,60 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Chai Latte / Pakistani</h4></div><div class="item-price">1,70 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Orange Juice (Natural)</h4></div><div class="item-price">3,00 €</div></div>
-            </div>
-
-            <div class="menu-card compact-list">
-                <h3 class="text-gold">Drinks & Spirits</h3>
-                <br>
-                <div class="menu-item"><div class="item-desc"><h4>Water (500ml)</h4></div><div class="item-price">1,80 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Soft Drinks</h4></div><div class="item-price">3,00 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Beer (Caña)</h4></div><div class="item-price">2,50 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Beer (Tubo)</h4></div><div class="item-price">3,00 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Alhambra 1925</h4></div><div class="item-price">3,50 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Spritz</h4><p>Italian Aperitif</p></div><div class="item-price">4,90 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Limoncello</h4></div><div class="item-price">4,00 €</div></div>
-                <div class="menu-item"><div class="item-desc"><h4>Grappa</h4></div><div class="item-price">4,00 €</div></div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <h2 class="text-gold">ORO NERO</h2>
-            <p style="color: #888; margin-bottom: 20px;">C/ Obispo Hurtado 21, Granada</p>
-            <p style="font-size: 1.2rem; font-weight: bold;">Reservations: +34 644 73 64 71</p>
-            <br>
-            <div class="socials">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-            <br>
-            
-            <div style="width: 100%; height: 300px; border: 1px solid #333; max-width: 600px; margin: 20px auto;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.097367865686!2d-3.6066386!3d37.1744964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fce8f3e4e1d1%3A0x12345abcde!2sC.%20Obispo%20Hurtado%2C%2021%2C%2018002%20Granada!5e0!3m2!1ses!2ses!4v1635789123456!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <p style="font-size: 0.8rem; color: #555; margin-top: 20px;">&copy; 2024 Oro Nero Caffè. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+            margin-bottom: 12px;
+            border-bottom: 1px dotted #333;
+            padding-bottom: 8px;
+            align-items:
