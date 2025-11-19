@@ -124,4 +124,300 @@
             margin-bottom: 12px;
             border-bottom: 1px dotted #333;
             padding-bottom: 8px;
-            align-items:
+            align-items: baseline;
+        }
+        .menu-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+        .item-name { font-weight: 700; color: #e0e0e0; font-size: 0.95rem; }
+        .item-desc { font-size: 0.8rem; color: #888; display: block; margin-top: 2px; font-style: italic; }
+        .item-price { color: var(--gold); font-weight: bold; white-space: nowrap; margin-left: 10px; font-size: 0.95rem; }
+
+        /* --- Menu del Dia Banner --- */
+        .daily-menu {
+            background: var(--gold);
+            color: #000;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer { margin-top: 50px; padding: 40px 20px; background: #000; text-align: center; color: #777; }
+        
+        /* Ocultar contenido por defecto */
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-bar">
+        <button class="lang-btn active" onclick="switchLang('es')" title="Español">🇪🇸</button>
+        <button class="lang-btn" onclick="switchLang('it')" title="Italiano">🇮🇹</button>
+        <button class="lang-btn" onclick="switchLang('en')" title="English">🇬🇧</button>
+    </div>
+
+    <header>
+        <a href="#" class="logo">ORO NERO <span>CAFFÈ</span></a>
+    </header>
+
+    <div id="content-es" class="lang-content active">
+        
+        <div class="daily-menu">
+            MENÚ DEL DÍA (Lunes a Viernes): Pasta + Bebida + Tapa + Café = 12,50 €
+        </div>
+
+        <div class="hero">
+            <div>
+                <h1>Auténtico Sabor Italiano</h1>
+                <p>Granada - Especialidades Caseras</p>
+            </div>
+        </div>
+
+        <div class="container section-padding">
+            
+            <div class="text-center"><h2 class="category-title">Desayunos</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Huevos</h3>
+                    <div class="menu-item"><div><span class="item-name">Tortilla Francesa</span></div><div class="item-price">3,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Tortilla Francesa York y Queso</span></div><div class="item-price">4,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Huevos Revueltos</span></div><div class="item-price">3,50 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Tostadas Clásicas</h3>
+                    <div class="menu-item"><div><span class="item-name">Aceite</span></div><div class="item-price">1,20 € / 2,20 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Aceite y Tomate</span></div><div class="item-price">1,20 € / 2,40 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Mantequilla</span></div><div class="item-price">1,30 € / 2,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Mixta / Miel</span></div><div class="item-price">1,40 € / 2,70 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Serrano y Tomate</span></div><div class="item-price">2,30 € / 4,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Serrano, Tomate y Queso</span></div><div class="item-price">2,70 € / 5,30 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Tostadas Italianas</h3>
+                    <div class="menu-item"><div><span class="item-name">Provolone y Tomate</span></div><div class="item-price">2,70 € / 5,30 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Speck y Tomate</span></div><div class="item-price">2,60 € / 5,10 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Speck, Gorgonzola y Tomate</span></div><div class="item-price">3,50 € / 6,80 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Mortadela y Mantequilla</span></div><div class="item-price">2,60 € / 5,10 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Panceta Arrotolata y Tomate</span></div><div class="item-price">2,60 € / 5,10 €</div></div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="text-center"><h2 class="category-title">La Carta</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Entrantes</h3>
+                    <div class="menu-item"><div><span class="item-name">Ensalada Caprese</span><span class="item-desc">Tomate y Mozzarella</span></div><div class="item-price">9,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Ensalada Oro Nero</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Huevos Rotos con Jamón</span></div><div class="item-price">10,00 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Pasta Fresca</h3>
+                    <div class="menu-item"><div><span class="item-name">Tagliatelle Bolognese</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Spaghetti Carbonara</span><span class="item-desc">Receta auténtica</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Bigoli Cacio e Pepe</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Gnocchi 4 Quesos / Pesto</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Lasagna</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Tortellini Ricotta e Spinaci</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Tortelloni Oro Nero</span><span class="item-desc">Pasta negra de salmón</span></div><div class="item-price">14,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Ravioli de Calabaza</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Caramelos de Queso y Pera</span></div><div class="item-price">14,00 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Carnes</h3>
+                    <div class="menu-item"><div><span class="item-name">Solomillo de Cerdo a la plancha</span></div><div class="item-price">16,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Solomillo Pimienta Verde</span></div><div class="item-price">17,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Entrecot</span></div><div class="item-price">19,50 €</div></div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Dulces</h3>
+                    <div class="menu-item"><div><span class="item-name">Tiramisú</span></div><div class="item-price">5,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Cannolo Siciliano</span></div><div class="item-price">3,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Strudel</span></div><div class="item-price">4,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Cheesecake</span></div><div class="item-price">5,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Croissant Relleno</span></div><div class="item-price">2,80 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Cafetería</h3>
+                    <div class="menu-item"><div><span class="item-name">Café Solo / Cortado</span></div><div class="item-price">1,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Café con Leche</span></div><div class="item-price">1,60 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Cappuccino</span></div><div class="item-price">2,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Bombón</span></div><div class="item-price">1,70 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Té / Infusiones</span></div><div class="item-price">1,60 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Zumo Naranja Natural</span></div><div class="item-price">3,00 €</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-it" class="lang-content">
+        <div class="daily-menu">
+            MENU DEL GIORNO (Lun-Ven): Pasta + Bevanda + Tapa + Caffè = 12,50 €
+        </div>
+        <div class="hero">
+            <div>
+                <h1>Autentico Sapore Italiano</h1>
+                <p>Granada - Specialità Caserecce</p>
+            </div>
+        </div>
+        <div class="container section-padding">
+            <div class="text-center"><h2 class="category-title">Colazione</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Uova</h3>
+                    <div class="menu-item"><div><span class="item-name">Omelette Francese</span></div><div class="item-price">3,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Omelette Prosciutto e Formaggio</span></div><div class="item-price">4,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Uova Strapazzate</span></div><div class="item-price">3,50 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Toast Italiani</h3>
+                    <div class="menu-item"><div><span class="item-name">Provolone e Pomodoro</span></div><div class="item-price">2,70 / 5,30 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Speck e Pomodoro</span></div><div class="item-price">2,60 / 5,10 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Speck, Gorgonzola e Pomodoro</span></div><div class="item-price">3,50 / 6,80 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Mortadella e Burro</span></div><div class="item-price">2,60 / 5,10 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Pancetta Arrotolata</span></div><div class="item-price">2,60 / 5,10 €</div></div>
+                </div>
+            </div>
+            <br><br>
+            <div class="text-center"><h2 class="category-title">Il Menù</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Antipasti</h3>
+                    <div class="menu-item"><div><span class="item-name">Insalata Caprese</span></div><div class="item-price">9,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Insalata Oro Nero</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Huevos Rotos con Jamón</span><span class="item-desc">Uova fritte con patate</span></div><div class="item-price">10,00 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Pasta Fresca</h3>
+                    <div class="menu-item"><div><span class="item-name">Tagliatelle Bolognese</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Spaghetti Carbonara</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Bigoli Cacio e Pepe</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Gnocchi 4 Formaggi / Pesto</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Lasagna</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Tortellini Ricotta e Spinaci</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Tortelloni Oro Nero</span><span class="item-desc">Salmone e Ricotta</span></div><div class="item-price">14,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Caramelle Pera e Formaggio</span></div><div class="item-price">14,00 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Carne</h3>
+                    <div class="menu-item"><div><span class="item-name">Filetto di Maiale (Griglia)</span></div><div class="item-price">16,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Filetto al Pepe Verde</span></div><div class="item-price">17,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Entrecot</span></div><div class="item-price">19,50 €</div></div>
+                </div>
+            </div>
+            <br>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Dolci</h3>
+                    <div class="menu-item"><div><span class="item-name">Tiramisú</span></div><div class="item-price">5,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Cannolo Siciliano</span></div><div class="item-price">3,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Strudel</span></div><div class="item-price">4,50 €</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-en" class="lang-content">
+        <div class="daily-menu">
+            MENU OF THE DAY (Mon-Fri): Pasta + Drink + Tapa + Coffee = 12,50 €
+        </div>
+        <div class="hero">
+            <div>
+                <h1>Authentic Italian Taste</h1>
+                <p>Granada - Homemade Specialties</p>
+            </div>
+        </div>
+        <div class="container section-padding">
+            <div class="text-center"><h2 class="category-title">Breakfast</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Eggs</h3>
+                    <div class="menu-item"><div><span class="item-name">French Omelette</span></div><div class="item-price">3,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Ham & Cheese Omelette</span></div><div class="item-price">4,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Scrambled Eggs</span></div><div class="item-price">3,50 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Italian Toasts</h3>
+                    <div class="menu-item"><div><span class="item-name">Provolone & Tomato</span></div><div class="item-price">2,70 / 5,30 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Speck & Tomato</span></div><div class="item-price">2,60 / 5,10 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Speck, Gorgonzola & Tomato</span></div><div class="item-price">3,50 / 6,80 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Mortadella & Butter</span></div><div class="item-price">2,60 / 5,10 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Rolled Bacon & Tomato</span></div><div class="item-price">2,60 / 5,10 €</div></div>
+                </div>
+            </div>
+            <br><br>
+            <div class="text-center"><h2 class="category-title">The Menu</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Starters</h3>
+                    <div class="menu-item"><div><span class="item-name">Caprese Salad</span><span class="item-desc">Tomato & Mozzarella</span></div><div class="item-price">9,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Oro Nero Salad</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Huevos Rotos</span><span class="item-desc">Fried eggs with Ham</span></div><div class="item-price">10,00 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Fresh Pasta</h3>
+                    <div class="menu-item"><div><span class="item-name">Tagliatelle Bolognese</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Spaghetti Carbonara</span><span class="item-desc">Authentic recipe</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Bigoli Cacio e Pepe</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Gnocchi 4 Cheeses / Pesto</span></div><div class="item-price">12,50 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Lasagna</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Ravioli Ricotta & Spinach</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Tortelloni Oro Nero</span><span class="item-desc">Salmon & Ricotta</span></div><div class="item-price">14,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Pumpkin Ravioli</span></div><div class="item-price">13,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Pear & Cheese Caramels</span></div><div class="item-price">14,00 €</div></div>
+                </div>
+                <div class="menu-card">
+                    <h3>Meat</h3>
+                    <div class="menu-item"><div><span class="item-name">Grilled Pork Tenderloin</span></div><div class="item-price">16,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Pork with Green Pepper</span></div><div class="item-price">17,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Entrecot</span></div><div class="item-price">19,50 €</div></div>
+                </div>
+            </div>
+            <br>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>Desserts</h3>
+                    <div class="menu-item"><div><span class="item-name">Tiramisú</span></div><div class="item-price">5,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Cannolo Siciliano</span></div><div class="item-price">3,00 €</div></div>
+                    <div class="menu-item"><div><span class="item-name">Strudel</span></div><div class="item-price">4,50 €</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>C/ Obispo Hurtado 21, Granada | Tel: +34 644 73 64 71</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">© 2024 Oro Nero Caffè</p>
+        <div style="margin-top:20px; opacity: 0.7;">
+            <a href="https://goo.gl/maps/YourMapLink" target="_blank" style="color: var(--gold); text-decoration:none;">Ver en Google Maps</a>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            // 1. Ocultar todo
+            document.querySelectorAll('.lang-content').forEach(div => {
+                div.classList.remove('active');
+            });
+            // 2. Mostrar seleccionado
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // 3. Actualizar botones
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Buscar el botón clicado (más simple: resaltar todos los del idioma)
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
